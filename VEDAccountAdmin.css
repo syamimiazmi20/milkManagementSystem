@@ -1,0 +1,176 @@
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #0D112F; 
+    color: white; 
+    margin: 0; 
+    overflow: hidden; 
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #11194c;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.sidebar img.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 60px;
+}
+.sidebar a, .sidebar .dropdown-btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    background-color: #11194c;
+    border: none;
+    text-align: left;
+    width: calc(100% - 30px); /* Adjusted to fit within sidebar */
+    cursor: pointer;
+    outline: none;
+    margin: 0 auto; /* Center the menu items */
+}
+.sidebar a:hover, .sidebar .dropdown-btn:hover {
+    background-color: #262b56;
+}
+.sidebar .dropdown-container {
+    display: none;
+    background-color: #11194c;
+}
+.sidebar .dropdown-container a {
+    padding-left: 45px; /* Indent dropdown items */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #11194c;
+    padding: 15px 20px;
+    position: fixed;
+    width: calc(100% - 250px);
+    left: 250px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.header .date-time {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+}
+.header img.profile {
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+.header img.profile:hover {
+    transform: scale(1.1);
+}
+
+.container { 
+    margin: 60px 5px 5px 260px; /* Adjust margins to avoid overlap */ 
+    padding: 0px; 
+} 
+h3 { 
+    font-family: Calibri; 
+    font-size: 25pt; 
+    font-style: normal; 
+    font-weight: bold; 
+    color: #fff; 
+    text-align: left; 
+} 
+
+.form-row { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+} 
+
+.form-group { 
+    flex: 1; 
+    margin-right: 10px; 
+} 
+
+.form-group:last-child { 
+    margin-right: 0; 
+} 
+
+.form-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+} 
+
+.form-group input, .form-group select, .form-group textarea { 
+    width: calc(100% - 20px); 
+    padding: 8px; 
+    box-sizing: border-box; 
+} 
+
+.form-row-buttons { 
+    display: flex; 
+    justify-content: center; 
+} 
+
+.form-row-buttons .button { 
+    margin: 5px; 
+} 
+
+.dropdown-content { 
+    display: none; 
+    position: absolute; 
+    background-color: #11194c; 
+    min-width: 160px; 
+    z-index: 1; 
+} 
+
+.dropdown-content a { 
+    color: white; 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: block; 
+} 
+
+.dropdown-content a:hover { 
+    background-color: #575fcf; 
+} 
+
+.dropdown:hover .dropdown-content { 
+    display: block; 
+} 
+td { 
+    font-size: 18px; /* Adjust the font size as needed */ 
+} 
+td.label { 
+    padding-right: 50px; 
+} 
+
+.form-row-buttons button { 
+    margin-right: 40px; /* Adjust the margin to create space between buttons */ 
+    background-color: #224261; /* Change the background color */ 
+    color: white; /* Change the text color */ 
+    border: none; /* Remove default button border */ 
+    border-radius: 5px; /* Add border-radius for rounded corners */ 
+    padding: 10px 20px; /* Add padding for button size */ 
+    cursor: pointer; /* Add pointer cursor for better user experience */ 
+    transition: background-color 0.3s; /* Add transition effect for smoother color change */ 
+} 
+
+.form-row-buttons button:hover { 
+    background-color: #45a049; /* Change the background color on hover */ 
+}
+.footer {
+    background-color: #0D112F;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

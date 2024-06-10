@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Shipping Method</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="path_to_your_logo_image.png" alt="Logo">
+      </div>
+      <div class="user-picture">
+        <img src="path_to_user_picture.png" alt="User Picture">
+      </div>
+    </div>
+  
+    <section>
+      <h2>Shipping Method</h2>
+      <form id="shippingForm">
+        <label for="delivery">
+          <input type="radio" id="delivery" name="shippingMethod" value="delivery" onclick="showDeliveryFields()" checked>
+          Delivery
+        </label><br>
+        <label for="pickup">
+          <input type="radio" id="pickup" name="shippingMethod" value="pickup" onclick="showPickupFields()">
+          Pickup
+        </label><br>
+      </form>
+    </section>
+
+    <section id="deliveryFields">
+      <h2>Delivery Information</h2>
+      <form id="deliveryForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"><br>
+
+        <label for="postcode">Postcode:</label>
+        <input type="text" id="postcode" name="postcode"><br>
+        <button type="button" onclick="proceedToNextStep()">Proceed to Next Step</button>
+      </form>
+    </section>
+
+    <section id="pickupFields" style="display: none;">
+      <h2>Pickup Information</h2>
+      <form id="pickupForm">
+        <label for="pickupDate">Pickup Date:</label>
+        <input type="date" id="pickupDate" name="pickupDate"><br>
+
+        <label for="pickupTime">Available Pickup Time:</label>
+        <select id="pickupTime" name="pickupTime">
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="evening">Evening</option>
+        </select><br>
+        <button type="button" onclick="proceedToNextStep()">Proceed to Next Step</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#"><img src="facebook_icon.png" alt="Facebook"></a>
+      <a href="#"><img src="instagram_icon.png" alt="Instagram"></a>
+    </div>
+  </footer>
+
+  <script>
+    function showDeliveryFields() {
+      document.getElementById("deliveryFields").style.display = "block";
+      document.getElementById("pickupFields").style.display = "none";
+    }
+
+    function showPickupFields() {
+      document.getElementById("deliveryFields").style.display = "none";
+      document.getElementById("pickupFields").style.display = "block";
+    }
+
+    function proceedToNextStep() {
+      // Check if the delivery option is selected and the delivery fields are visible
+      if (document.getElementById("delivery").checked && document.getElementById("deliveryFields").style.display === "block") {
+        // Check if any of the delivery fields are empty
+        var name = document.getElementById("name").value.trim();
+        var phoneNumber = document.getElementById("phoneNumber").value.trim();
+        var address = document.getElementById("address").value.trim();
+        var city = document.getElementById("city").value.trim();
+        var state = document.getElementById("state").value.trim();
+        var postcode = document.getElementById("postcode").value.trim();
+
+        if (name === "" || phoneNumber === "" || address === "" || city === "" ||
+    state === "" || postcode === "") {
+          alert("Please fill in all the delivery information.");
+          return; // Stop execution if any field is empty
+        }
+      }
+
+      // Check if the pickup option is selected and the pickup fields are visible
+      if (document.getElementById("pickup").checked && document.getElementById("pickupFields").style.display === "block") {
+        // Check if any of the pickup fields are empty
+        var pickupDate = document.getElementById("pickupDate").value.trim();
+        var pickupTime = document.getElementById("pickupTime").value.trim();
+
+        if (pickupDate === "" || pickupTime === "") {
+          alert("Please fill in all the pickup information.");
+          return; // Stop execution if any field is empty
+        }
+      }
+
+      // If all fields are filled, redirect the user to the payment page
+      window.location.href = "payment.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Purchase - Customer</title>
+    <link rel="stylesheet" href="CreateMilkPurchase.css"> 
+
+
+</head>
+<body>
+
+<div class="header">
+    <div class="date-time" id="date-time"></div>
+    <img src="profile-picture.png" alt="User Profile" class="profile">
+</div>
+
+<div class="content">
+    <h1>Milk Purchase</h1>
+    <p>Manage Milk Purchase</p>
+    <button onclick="addEntry()">Add New Purchase</button>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Amount(L)</th>
+                    <th>Price per L (RM)</th>
+                    <th>Total Price(RM)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EMP001</td>
+                    <td>30.0</td>
+                    <td>50.0</td>
+                    <td>1500.0</td>
+                    <td>
+                        <img src="edit-icon.png" alt="Edit" class="action-button"> edit
+                        <img src="delete-icon.png" alt="Delete" class="action-button"> delete
+                    </td>
+                </tr>
+                <tr>
+                    <td>EMP002</td>
+                    <td>25.0</td>
+                    <td>45.0</td>
+                    <td>1125.0</td>
+                    <td>
+                        <img src="edit-icon.png" alt="Edit" class="action-button"> edit
+                        <img src="delete-icon.png" alt="Delete" class="action-button"> delete
+                    </td>
+                </tr>
+                <tr>
+                    <td>EMP003</td>
+                    <td>35.0</td>
+                    <td>55.0</td>
+                    <td>1925.0</td>
+                    <td>
+                        <img src="edit-icon.png" alt="Edit" class="action-button"> edit
+                        <img src="delete-icon.png" alt="Delete" class="action-button"> delete
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div><div class="footer">
+    <p>&copy; 2023 Lorem Ipsum. All Rights Reserved.</p>
+    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+</div>
+
+<script>
+    function addEntry() {
+        alert("Add Milk Entry functionality to be implemented.");
+    }
+
+    function updateDateTime() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('date-time').textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // initial call
+</script>
+
+</body>
+</html>
